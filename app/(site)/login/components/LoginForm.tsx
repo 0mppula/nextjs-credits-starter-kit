@@ -20,7 +20,7 @@ const LoginForm = () => {
 		}
 
 		await signIn(provider, {
-			callbackUrl: '/welcome',
+			callbackUrl: '/dashboard',
 			redirect: true,
 		}).then((callback) => {
 			if (callback?.error) {

@@ -31,7 +31,7 @@ export default function page() {
 			</section>
 
 			<LandingPageWrapper>
-				<section className="mt-12 w-full flex flex-col gap-4 items-center justify-center">
+				<section className="mt-8 w-full flex flex-col gap-4 items-center justify-center">
 					<CTA />
 				</section>
 

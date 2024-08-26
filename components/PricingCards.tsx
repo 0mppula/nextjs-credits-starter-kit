@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
 	Card,
 	CardContent,
@@ -9,6 +8,8 @@ import {
 } from '@/components/ui/card';
 import { plans } from '@/constants';
 import { CircleCheck, CircleX } from 'lucide-react';
+import PricingButton from './PricingButton';
+
 const PricingCards = () => {
 	return (
 		<>
@@ -50,7 +51,7 @@ const PricingCards = () => {
 					</CardContent>
 
 					<CardFooter>
-						<Button className="w-full">Get Started</Button>
+						<PricingButton plan={plan} />
 					</CardFooter>
 				</Card>
 			))}
