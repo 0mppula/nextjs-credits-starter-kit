@@ -23,7 +23,7 @@ export default function RootLayout({
 				<Providers>
 					<Nav />
 
-					<main className="pt-10 lg:pt-16 flex flex-col min-h-[calc(100svh-3.5rem-2px)] items-center mx-auto pb-32">
+					<main className="flex flex-col min-h-[calc(100svh-3.5rem-2px)] items-center mx-auto pb-32">
 						{children}
 
 						<Toaster />
