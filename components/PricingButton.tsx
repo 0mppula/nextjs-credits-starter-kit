@@ -24,7 +24,7 @@ const PricingButton = ({ plan }: IPricingButton) => {
 				</Button>
 			) : (
 				<Button className="w-full" asChild>
-					<Link href="/login">Get Started</Link>
+					<Link href={`/login?redirectUrl=${'pricing'}`}>Get Started</Link>
 				</Button>
 			)}
 		</>

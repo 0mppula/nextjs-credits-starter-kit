@@ -2,6 +2,7 @@
 
 import { ButtonWithIcon } from '@/components/ButtonWithIcon';
 import { signIn } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { toast } from 'sonner';
@@ -9,6 +10,9 @@ import { toast } from 'sonner';
 const LoginForm = () => {
 	const [googleIsLoading, setGoogleIsLoading] = useState(false);
 	const [githubIsLoading, setGithubIsLoading] = useState(false);
+	const searchParams = useSearchParams();
+
+	const redirectUrl = searchParams.get('redirectUrl');
 
 	const socialAction = async (provider: string) => {
 		if (provider === 'google') {
@@ -20,7 +24,7 @@ const LoginForm = () => {
 		}
 
 		await signIn(provider, {
-			callbackUrl: '/dashboard',
+			callbackUrl: '/' + redirectUrl || '/dashboard',
 			redirect: true,
 		}).then((callback) => {
 			if (callback?.error) {
