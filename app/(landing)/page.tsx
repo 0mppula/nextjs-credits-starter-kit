@@ -1,6 +1,11 @@
+import PricingCards from '@/components/PricingCards';
+import { APP_NAME } from '@/constants';
 import { setAppTitle } from '@/lib/utils';
 import { Metadata } from 'next/types';
-import LoginForm from './components/LoginForm';
+import CTA from './components/CTA';
+import FAQ from './components/FAQ';
+import ImageCarousel from './components/ImageCarousel';
+import LandingPageWrapper from './components/LandingPageWrapper';
 
 export const metadata: Metadata = {
 	title: setAppTitle('Login'),
@@ -9,12 +14,41 @@ export const metadata: Metadata = {
 
 export default function page() {
 	return (
-		<div className="flex flex-col w-full h-full md:my-auto items-center justify-center">
-			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-				Login to Your Account
-			</h1>
+		<>
+			<section>
+				<LandingPageWrapper>
+					<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center text-balance">
+						Generate <span className="text-primary">Beautiful</span> Images with{' '}
+						<span className="text-primary">{APP_NAME}</span>
+					</h1>
+				</LandingPageWrapper>
 
-			<LoginForm />
-		</div>
+				{/* Carusel */}
+				<div className="flex flex-col gap-2 md:gap-4 lg:gap-6 mt-8">
+					<ImageCarousel />
+					<ImageCarousel direction="backward" />
+				</div>
+			</section>
+
+			<LandingPageWrapper>
+				<section className="mt-12 w-full flex flex-col gap-4 items-center justify-center">
+					<CTA />
+				</section>
+
+				<section className="mt-24 w-full">
+					<FAQ />
+				</section>
+
+				<section className="mt-24 w-full">
+					<h2 className="text-center scroll-m-20 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
+						Pricing
+					</h2>
+
+					<div className="flex flex-col md:flex-row gap-4 mt-6 w-full">
+						<PricingCards />
+					</div>
+				</section>
+			</LandingPageWrapper>
+		</>
 	);
 }

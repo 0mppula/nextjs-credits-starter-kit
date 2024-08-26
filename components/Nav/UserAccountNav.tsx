@@ -14,6 +14,7 @@ import type { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import { useMemo } from 'react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 interface UserAccountNavProps {
 	user: Pick<User, 'name' | 'image' | 'email'>;
@@ -61,11 +62,21 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
 					)}
 				</DropdownMenuLabel>
 
+				<DropdownMenuSeparator className="md:hidden" />
+
+				<DropdownMenuItem className="md:hidden" asChild>
+					<Link href="/dashboard">Dashboard</Link>
+				</DropdownMenuItem>
+
+				<DropdownMenuItem className="md:hidden" asChild>
+					<Link href="/">Pricing</Link>
+				</DropdownMenuItem>
+
 				<DropdownMenuSeparator />
 
 				<DropdownMenuItem
 					className="focus:bg-destructive/25"
-					onClick={() => signOut({ callbackUrl: '/' })}
+					onClick={() => signOut({ callbackUrl: '/login' })}
 				>
 					<LogOut aria-hidden className="mr-2 h-4 w-4" /> Sign out
 				</DropdownMenuItem>
