@@ -12,9 +12,9 @@ import {
 import { LogOut } from 'lucide-react';
 import type { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
+import Link from 'next/link';
 import { useMemo } from 'react';
 import { Button } from '../ui/button';
-import Link from 'next/link';
 
 interface UserAccountNavProps {
 	user: Pick<User, 'name' | 'image' | 'email'>;
@@ -69,7 +69,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
 				</DropdownMenuItem>
 
 				<DropdownMenuItem className="md:hidden" asChild>
-					<Link href="/">Pricing</Link>
+					<Link href="/pricing">Pricing</Link>
 				</DropdownMenuItem>
 
 				<DropdownMenuSeparator />
