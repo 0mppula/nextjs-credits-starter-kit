@@ -9,9 +9,25 @@
     </a>
 </div>
 
-## Nextjs Credits Starter Kit?
+## What is Nextjs Credits Starter Kit?
 
-This application is a Next.js 14 starter kit for authentication, featuring NextAuth, Prisma Adapter, and MongoDB. It utilizes TypeScript, React, and Shadcn-UI, with styling provided by Tailwind CSS. Additionally, the starter kit includes protected routes, theme toggling, and a user account nav in the nav bar. Follow the instructions below to quickly get started with this repository and begin developing your app. If you find this project helpful, please consider starring ⭐ this repository!
+This starter kit provides everything you need to quickly launch a new SaaS product or any other web application, allowing you to focus on what really matters.
+
+The starter kit is built with Next.js 14, providing a solid foundation for authentication using NextAuth, Prisma Adapter, and MongoDB. It utilizes TypeScript, React, and Shadcn-UI, with Tailwind CSS for styling. Key features include protected routes, theme switching, and a user account menu integrated into the navbar.
+
+Follow the instructions below to quickly set up this repository and start developing your app.
+
+### Key Features:
+
+-   **User Authentication**: Provides user data persistence using MongoDB.
+-   **Stripe Integration**: Full implementation for purchasing credits and saving individual payments to the database.
+-   **Landing Page Template**: Pre-built landing page to get you started.
+-   **Dashboard and Payment Pages**: Includes dashboard, payment success, and payment cancellation pages.
+-   **Theme Toggling**: Switch between light and dark themes.
+-   **Protected Routes**: Secure your application with protected routes.
+-   **Pricing Cards**: Ready-to-use pricing card components.
+
+If you find this starter kit helpful, please consider starring ⭐ this repository!
 
 ---
 
@@ -21,8 +37,9 @@ This application is a Next.js 14 starter kit for authentication, featuring NextA
 
 -   Node.js version 18.18 or higher
 -   MongoDB database
--   Google Provider: [Google Cloud](https://console.cloud.google.com/) project with an OAuth consent screen created.
--   GitHub Provider: GitHub [OAuth App](https://github.com/settings/developers)
+-   **Google Provider**: [Google Cloud](https://console.cloud.google.com/) project with an OAuth consent screen created.
+-   **GitHub Provider**: GitHub [OAuth App](https://github.com/settings/developers)
+-   **Stripe credentials**: Get started [here](https://stripe.com/)
 
 ### Cloning the repository
 
@@ -82,17 +99,34 @@ This application is a Next.js 14 starter kit for authentication, featuring NextA
 
 In the root of the project create an `.env` file and declare the following variables:
 
-```ts
-DATABASE_URL=
+```
+# MongoDB database connection string
+DATABASE_URL=mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/<DATABASE_NAME>
+
+# Google OAuth
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+
+# GitHub OAuth
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
+
 NEXTAUTH_SECRET=
+
+# Stripe
 STRIPE_SECRET_KEY=
 NEXT_PUBLIC_STRIPE_PUBLIC_KEY=
+
+# stripe listen --forward-to localhost:3000/api/payments/webhook/stripe
 STRIPE_WEBHOOK_SECRET=
-FRONTEND_URL=
+
+# Product price ids
+NEXT_PUBLIC_STRIPE_BASIC_PRICE_ID=
+NEXT_PUBLIC_STRIPE_PRO_PRICE_ID=
+NEXT_PUBLIC_STRIPE_PREMIUM_PRICE_ID=
+
+# Used for Stripe checkout session redirections
+FRONTEND_URL=http://localhost:3000
 ```
 
 Populate the variables with the corresponding data.
@@ -141,23 +175,23 @@ Running commands with npm `npm run [command]`
 
 ### Framework
 
--   **Front-end Framework:** Next.js (v13.4.12)
+-   **Front-end Framework**: Next.js (v13.4.12)
 
 ### UI
 
--   **UI Library:** shadcn-ui
--   **UI Styling:** tailwindcss (v3.4.1) with tailwindcss-animate (v1.0.7)
--   **Theming:** next-themes (v0.3.0)
--   **Icons:** react-icons (v5.3.0) & lucide-react (v0.434.0)
--   **CSS Utility:** clsx (v2.1.1)
--   **Class Variance Management:** class-variance-authority (v0.7.0)
+-   **UI Library**: shadcn-ui
+-   **UI Styling**: tailwindcss (v3.4.1) with tailwindcss-animate (v1.0.7)
+-   **Theming**: next-themes (v0.3.0)
+-   **Icons**: react-icons (v5.3.0) & lucide-react (v0.434.0)
+-   **CSS Utility**: clsx (v2.1.1)
+-   **Class Variance Management**: class-variance-authority (v0.7.0)
 
 ### Backend & Authentication
 
--   **Prisma ORM:** @prisma/client (v5.18.0) with prisma (v5.18.0) as a dev dependency
--   **User Authentication:** next-auth (v4.24.7) with prisma-adapter (v1.0.7)
--   **TypeScript:** (v^5)
--   **Type Definitions:** @types/node (v^20), @types/react (^18), @types/react-dom (v^18)
+-   **Prisma ORM**: @prisma/client (v5.18.0) with prisma (v5.18.0) as a dev dependency
+-   **User Authentication**: next-auth (v4.24.7) with prisma-adapter (v1.0.7)
+-   **TypeScript**: (v^5)
+-   **Type Definitions**: @types/node (v^20), @types/react (^18), @types/react-dom (v^18)
 
 ---
 
