@@ -11,7 +11,7 @@ export const plans = [
 		popular: false,
 		features: [
 			{
-				label: '8 Credits',
+				label: '10 Credits',
 				isIncluded: true,
 			},
 			{
@@ -36,7 +36,7 @@ export const plans = [
 		popular: true,
 		features: [
 			{
-				label: '20 Credits',
+				label: '25 Credits',
 				isIncluded: true,
 			},
 			{
@@ -61,7 +61,7 @@ export const plans = [
 		popular: false,
 		features: [
 			{
-				label: '50 Credits',
+				label: '75 Credits',
 				isIncluded: true,
 			},
 			{
