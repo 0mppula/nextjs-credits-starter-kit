@@ -1,5 +1,6 @@
 import PricingCards from '@/components/PricingCards';
 import H1 from '@/components/Typography/H1';
+import H2 from '@/components/Typography/H2';
 import { APP_NAME } from '@/constants';
 import { setAppTitle } from '@/lib/utils';
 import { Metadata } from 'next/types';
@@ -41,9 +42,7 @@ export default function page() {
 				</section>
 
 				<section className="mt-24 w-full">
-					<h2 className="text-center scroll-m-20 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
-						Pricing
-					</h2>
+					<H2>Pricing</H2>
 
 					<div className="flex flex-col md:flex-row gap-4 mt-6 w-full">
 						<PricingCards />

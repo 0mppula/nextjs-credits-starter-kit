@@ -1,3 +1,4 @@
+import H2 from '@/components/Typography/H2';
 import {
 	Accordion,
 	AccordionContent,
@@ -8,9 +9,7 @@ import {
 const FAQ = () => {
 	return (
 		<>
-			<h2 className="text-center scroll-m-20 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
-				Frequently Asked Questions
-			</h2>
+			<H2>Frequently Asked Questions</H2>
 
 			<Accordion type="single" collapsible className="mt-6 w-full">
 				<AccordionItem value="item-1">
