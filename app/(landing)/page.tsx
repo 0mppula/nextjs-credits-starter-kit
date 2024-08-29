@@ -1,4 +1,5 @@
 import PricingCards from '@/components/PricingCards';
+import H1 from '@/components/Typography/H1';
 import { APP_NAME } from '@/constants';
 import { setAppTitle } from '@/lib/utils';
 import { Metadata } from 'next/types';
@@ -17,10 +18,10 @@ export default function page() {
 		<>
 			<section>
 				<LandingPageWrapper>
-					<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center text-balance">
+					<H1>
 						Generate <span className="text-primary">Beautiful</span> Images with{' '}
 						<span className="text-primary">{APP_NAME}</span>
-					</h1>
+					</H1>
 				</LandingPageWrapper>
 
 				{/* Carusel */}

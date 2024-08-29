@@ -1,3 +1,4 @@
+import H1 from '@/components/Typography/H1';
 import { Button } from '@/components/ui/button';
 import { setAppTitle } from '@/lib/utils';
 import Link from 'next/link';
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
 export default function page() {
 	return (
 		<>
-			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-				Payment Cancelled
-			</h1>
+			<H1>Payment Cancelled</H1>
 
 			<div className="flex flex-col items-center gap-4 mt-8">
 				<p className="leading-7 text-center">The good news is, you can try again later.</p>

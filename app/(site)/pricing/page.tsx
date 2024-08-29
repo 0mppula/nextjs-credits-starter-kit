@@ -1,4 +1,5 @@
 import PricingCards from '@/components/PricingCards';
+import H1 from '@/components/Typography/H1';
 import { setAppTitle } from '@/lib/utils';
 import { Metadata } from 'next/types';
 
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
 const page = () => {
 	return (
 		<>
-			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-				Pricing
-			</h1>
+			<H1>Pricing</H1>
 
 			<div className="mt-8 flex flex-col md:flex-row gap-4 w-full">
 				<PricingCards />

@@ -1,3 +1,4 @@
+import H1 from '@/components/Typography/H1';
 import { setAppTitle } from '@/lib/utils';
 import { Metadata } from 'next/types';
 import Credits from './Credits';
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
 const page = () => {
 	return (
 		<>
-			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-				Dashboard
-			</h1>
+			<H1>Dashboard</H1>
 
 			<Credits />
 		</>
