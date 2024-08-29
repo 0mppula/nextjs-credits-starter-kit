@@ -151,6 +151,12 @@ Populate the variables with the corresponding data.
 npm run dev
 ```
 
+### Forward Stripe events to your webhook
+
+```shell
+stripe listen --forward-to localhost:3000/webhook
+```
+
 ## Available commands
 
 Running commands with npm `npm run [command]`
