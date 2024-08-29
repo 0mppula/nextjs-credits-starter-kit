@@ -17,9 +17,11 @@ const Nav = async () => {
 				</Link>
 
 				<div className="gap-2 hidden md:flex">
-					<Button variant="link" asChild>
-						<Link href="/dashboard">Dashboard</Link>
-					</Button>
+					{session?.user && (
+						<Button variant="link" asChild>
+							<Link href="/dashboard">Dashboard</Link>
+						</Button>
+					)}
 
 					<Button variant="link" asChild>
 						<Link href="/pricing">Pricing</Link>

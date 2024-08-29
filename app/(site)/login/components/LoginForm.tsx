@@ -24,7 +24,7 @@ const LoginForm = () => {
 		}
 
 		await signIn(provider, {
-			callbackUrl: '/' + redirectUrl || '/dashboard',
+			callbackUrl: (redirectUrl && '/' + redirectUrl) || '/dashboard',
 			redirect: true,
 		}).then((callback) => {
 			if (callback?.error) {

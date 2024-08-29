@@ -15,7 +15,7 @@ const ImageCarousel = ({ direction = 'forward' }: ImageCarouselProps) => {
 			plugins={[
 				AutoScroll({
 					startDelay: 0,
-					speed: 0.25,
+					speed: 0.2,
 					direction,
 					stopOnFocusIn: false,
 				}),

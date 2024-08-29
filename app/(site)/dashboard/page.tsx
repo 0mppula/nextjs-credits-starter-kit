@@ -1,7 +1,6 @@
-import { Button } from '@/components/ui/button';
 import { setAppTitle } from '@/lib/utils';
-import Link from 'next/link';
 import { Metadata } from 'next/types';
+import Credits from './Credits';
 
 export const metadata: Metadata = {
 	title: setAppTitle('Dashboard'),
@@ -15,15 +14,7 @@ const page = () => {
 				Dashboard
 			</h1>
 
-			<div className="flex flex-col items-center gap-4 mt-8">
-				<p>
-					You have <span className="text-primary">0</span> credits remaining.
-				</p>
-
-				<Button asChild>
-					<Link href="/pricing">Buy more credits</Link>
-				</Button>
-			</div>
+			<Credits />
 		</>
 	);
 };

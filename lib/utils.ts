@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const setAppTitle = (title: string) => {
-	return `${APP_NAME} – ${title}`;
+	return `${title} – ${APP_NAME}`;
 };
 
 export function getGoogleCredentials(): { clientId: string; clientSecret: string } {
@@ -48,4 +48,29 @@ export function getNextAuthSecret() {
 	}
 
 	return secret;
+}
+
+export function getStripePublicKey() {
+	const publicKey = process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY;
+
+	if (!publicKey || publicKey.length === 0) {
+		throw new Error('Missing NEXT_PUBLIC_STRIPE_PUBLIC_KEY');
+	}
+
+	return publicKey;
+}
+
+export function getStripeCredentials() {
+	const secret = process.env.STRIPE_SECRET_KEY;
+	const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+	if (!secret || secret.length === 0) {
+		throw new Error('Missing STRIPE_SECRET_KEY');
+	}
+
+	if (!webhookSecret || webhookSecret.length === 0) {
+		throw new Error('Missing STRIPE_WEBHOOK_SECRET');
+	}
+
+	return { secret, webhookSecret };
 }

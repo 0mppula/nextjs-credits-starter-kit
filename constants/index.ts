@@ -1,9 +1,11 @@
 export const APP_NAME = 'Credits Starter Kit';
 
+export const USER_CREDITS_QUERY_KEY = 'user-credits';
+
 export const plans = [
 	{
 		priceId: process.env.NEXT_PUBLIC_STRIPE_BASIC_PRICE_ID || '',
-		name: 'Basic Package',
+		name: 'Basic',
 		price: 4.99,
 		credits: 10,
 		popular: false,
@@ -28,7 +30,7 @@ export const plans = [
 	},
 	{
 		priceId: process.env.NEXT_PUBLIC_STRIPE_PRO_PRICE_ID || '',
-		name: 'Pro Package',
+		name: 'Pro',
 		price: 9.99,
 		credits: 25,
 		popular: true,
@@ -53,7 +55,7 @@ export const plans = [
 	},
 	{
 		priceId: process.env.NEXT_PUBLIC_STRIPE_PREMIUM_PRICE_ID || '',
-		name: 'Premium Package',
+		name: 'Premium',
 		price: 19.99,
 		credits: 75,
 		popular: false,

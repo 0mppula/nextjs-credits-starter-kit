@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export async function middleware(request: NextRequest) {
-	const sensitiveRoutes = ['/welcome'];
+	const sensitiveRoutes = ['/dashboard', '/payment-success', '/payment-cancel'];
 	const noAuthRoutes = ['/login'];
 	const pathname = request.nextUrl.pathname;
 
@@ -22,5 +22,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ['/', '/welcome', '/login'],
+	matcher: ['/dashboard', '/login', '/payment-success', '/payment-cancel'],
 };
