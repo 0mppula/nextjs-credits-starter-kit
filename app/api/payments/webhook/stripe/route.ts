@@ -60,6 +60,12 @@ export async function POST(req: NextRequest) {
 					await db.payments.create({
 						data: paymentData,
 					});
+
+					// Successfully handled
+					return NextResponse.json({
+						status: 200,
+						message: 'Checkout session completed and processed successfully',
+					});
 				} catch (error) {
 					console.error('Error handling checkout session:', error);
 					return NextResponse.json({
